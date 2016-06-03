@@ -43,9 +43,11 @@ We'll let WordPress add them to our templates automatically instead
 of writing our own link tags in the header. */
 
 function hackeryou_styles(){
-	wp_enqueue_style('style', get_stylesheet_uri() );
 
-	wp_enqueue_style('fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
+	wp_enqueue_style('fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css');
+	wp_enqueue_style('googlefontpoppins','https://fonts.googleapis.com/css?family=Poppins:400,300,600,700,500');
+	wp_enqueue_style('googlefontdroid','https://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700,700italic');
+	wp_enqueue_style('style', get_stylesheet_uri() );
 }
 
 add_action( 'wp_enqueue_scripts', 'hackeryou_styles');
@@ -69,6 +71,22 @@ function hackeryou_scripts() {
     'plugins', //handle
     get_template_directory_uri() . '/js/plugins.js', //source
     false, //dependencies
+    null, // version number
+    true //load in footer
+  );
+
+  wp_enqueue_script(
+  	'googlemapapi',
+  	"http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false",
+  	array( 'jquery' ), //dependencies
+  	null, //version number
+  	true //load in footer
+  );
+
+   wp_enqueue_script(
+    'google', //handle
+    get_template_directory_uri() . '/js/google.js', //source
+    array( 'jquery' ), //dependencies
     null, // version number
     true //load in footer
   );
@@ -274,5 +292,17 @@ function get_post_parent($post) {
 	}
 	else {
 		return $post->ID;
+	}
+}
+
+function theme_prefix_setup() {
+	add_theme_support( 'custom-logo');
+}
+	
+add_action( 'after_setup_theme', 'theme_prefix_setup' );
+
+function theme_prefix_the_custom_logo() {
+	if ( function_exists( 'the_custom_logo' ) ) {
+		the_custom_logo();
 	}
 }
