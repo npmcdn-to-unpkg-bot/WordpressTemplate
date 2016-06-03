@@ -1,0 +1,192 @@
+/*!
+* Theme Name: HackerYou Starter Theme
+* Theme URI: http://hackeryou.com;
+* Description: Starter theme for building any website. Created by HackerYou. * Rename this to your own theme page.
+* Version: 1.0
+* Author: HackerYou
+* Author URI: http://hackeryou.com
+*/
+
+@import 'normalize';
+@import 'variables';
+@import 'typography';
+@import 'header';
+@import 'navigation';
+@import 'sidebar';
+@import 'comments';
+@import 'google';
+@import 'footer';
+/*
+====================================
+Default Styling
+====================================
+*/
+
+img {
+	max-width: 100%;
+}
+
+body {
+	color: #333;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	margin-top: 50px;
+	text-align: center;
+	padding: 0 25px;
+}
+
+.full {
+	width: 100%;
+}
+
+.custom-logo {
+	width: 80px;
+	height: 80px;
+}
+
+.hero {
+	display: flex;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 100vh;
+	max-height: 474px;
+	width: 75vw;
+	justify-content: flex-start;
+	align-items: center;
+	margin: 0 auto;
+	max-width:  1200px;
+	.headlineContainer {
+		position: relative;
+		left: -5%;
+		display: flex;
+		flex-direction: column;
+		// align-items: center;
+		justify-content: flex-start;
+		max-width: 50%;
+		h1 {
+			background: white;
+		}
+	}
+	h4 {
+		text-align: right;
+		max-width: 35%;
+		background: white;
+		margin-bottom: 10px;
+		&:after {
+			content: "";
+			background: black;
+			height: 2px;
+			width: 35%;
+			position: absolute;
+			top: -10px;
+			left: 0;
+		}
+	}
+}
+
+.gallery {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding: 10px;
+	flex-wrap: wrap;
+	width: 100%;
+	.imageItem {
+		margin: 25px;
+		text-align: center;
+		text-overflow: ellipsis;
+		width: calc(33% - 50px);
+		box-shadow: 0px 10px 20px 0px lighten($textColor, 75%);
+		border: 1px solid transparentize($textColor, 0.8);
+		border-radius: 5px;
+		.frontpageimgcontainer {
+			width: 100%;
+			position: relative;
+			padding-bottom: 100%;
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			border-radius: 4px 4px 0 0;
+			// opacity: 0;
+			// visibility: hidden;
+			// transition: all 1s ease;
+			&:before {
+				content: "";
+				position: absolute;
+				width: 0%;
+				height: 0%;
+				background: aliceblue;
+				top: 50%;
+				left: 50%;
+				opacity: 0;
+				border-radius: 5px 5px 0 0;
+				transition: all 0.3s ease;
+			}
+			&:hover:before{
+				opacity: 1;
+				height: 100%;
+				width: 100%;
+				top: 0;
+				left: 0;
+				cursor: pointer;
+			}
+			&:after {
+				content: "\f067";
+				font-family: FontAwesome;
+				// font-weight: 100;
+				position: absolute;
+				top: 50%;
+				left: calc(50% - 18.5px);
+				line-height: 0;
+				opacity: 0; 
+				color: white;
+				font-size: 50px;
+				text-shadow: 0 0px 5px rgba(0,0,0,0.15);
+				transition: all 0.2s ease;
+			}
+			&:hover:after {
+				opacity: 1;
+				cursor: pointer;
+			}
+		}
+	}
+	a {
+		color: $linkColor;
+	}
+	h5 {
+		// padding: 10px 0;
+		display: inline-block;
+		padding: 10% 0;
+	}
+}
+
+.viewMore {
+	border: 1px solid rgba(0,0,0,.2);
+	box-shadow: 0 10px 20px 0 #bfbfbf;
+	color: $linkColor;
+	padding: 10px 20px;
+	margin: 10px 0 30px 0;
+	border-radius: 5px;
+	&:active {
+		position: relative;
+		top: 3px;
+		box-shadow: 0 7px 20px 0 #bfbfbf;
+	}
+	&:hover {
+		color: $linkColor;
+	}
+}
+
+@import 'media';
