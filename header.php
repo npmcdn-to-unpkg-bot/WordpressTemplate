@@ -10,11 +10,14 @@
 	<?php wp_head(); ?>
 </head>
 
+<!-- variables -->
+<?php $main_color = get_field('main_color', 'options'); ?>
+<?php $accent_color = get_field('accent_color', 'options'); ?>
 
 <body <?php body_class(); ?>>
 
 <header>
-	<div class="navcontainer container">
+	<div style="color:<?php echo $main_color ?>;" class="navcontainer container">
 		<h1>
 			<?php the_custom_logo(); ?>
 		</h1>

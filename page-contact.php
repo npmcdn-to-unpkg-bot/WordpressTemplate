@@ -20,10 +20,14 @@ get_header();  ?>
 
       if( !empty($location) ):
       ?>
+      <div class="contactCard">
       <div class="acf-map">
         <div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"></div>
       </div>
       <?php endif; ?>
+
+      <div class="moreInfo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero ad, hic atque error, dolorem aliquam natus facilis nam tempore! Praesentium deleniti dolores magni reiciendis voluptas excepturi vero dolorem ratione deserunt!</div>
+      </div>
 
     <?php endwhile; // end the loop?>
     </div>

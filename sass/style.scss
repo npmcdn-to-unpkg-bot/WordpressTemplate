@@ -27,7 +27,7 @@ img {
 }
 
 body {
-	color: #333;
+	// color: #333;
 }
 
 .container {
@@ -108,7 +108,7 @@ body {
 		text-align: center;
 		text-overflow: ellipsis;
 		width: calc(33% - 50px);
-		box-shadow: 0px 10px 20px 0px lighten($textColor, 75%);
+		box-shadow: 0px 10px 20px 0px lighten($textColor, 88.3%);
 		border: 1px solid transparentize($textColor, 0.8);
 		border-radius: 5px;
 		.frontpageimgcontainer {
@@ -163,7 +163,7 @@ body {
 		}
 	}
 	a {
-		color: $linkColor;
+		// color: $linkColor;
 	}
 	h5 {
 		// padding: 10px 0;
@@ -174,18 +174,18 @@ body {
 
 .viewMore {
 	border: 1px solid rgba(0,0,0,.2);
-	box-shadow: 0 10px 20px 0 #bfbfbf;
-	color: $linkColor;
+	box-shadow: 0px 10px 20px 0px lighten($textColor, 88.3%);
+	// color: $linkColor;
 	padding: 10px 20px;
 	margin: 10px 0 30px 0;
 	border-radius: 5px;
 	&:active {
 		position: relative;
 		top: 3px;
-		box-shadow: 0 7px 20px 0 #bfbfbf;
+		box-shadow: 0 7px 20px 0 lighten($textColor, 88.3%);
 	}
 	&:hover {
 		color: $linkColor;
 	}
 }
-// @import 'media';
+@import 'media';
