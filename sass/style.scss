@@ -108,6 +108,7 @@ body {
 		text-align: center;
 		text-overflow: ellipsis;
 		width: calc(33% - 50px);
+		background:white;
 		box-shadow: 0px 10px 20px 0px lighten($textColor, 88.3%);
 		border: 1px solid transparentize($textColor, 0.8);
 		border-radius: 5px;

@@ -13,8 +13,9 @@
 <!-- variables -->
 <?php $main_color = get_field('main_color', 'options'); ?>
 <?php $accent_color = get_field('accent_color', 'options'); ?>
+<?php $body_color = get_field('body_color', 'options'); ?>
 
-<body <?php body_class(); ?>>
+<body style="background-color:<?php echo $body_color ?>" <?php body_class(); ?>>
 
 <header>
 	<div style="color:<?php echo $main_color ?>;" class="navcontainer container">
