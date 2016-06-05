@@ -1,0 +1,67 @@
+.contactCard {
+	display: flex;
+	background: white;
+	box-shadow: 0 5px 5px 1px rgba(0,0,0,.3);
+	border-radius: 8px;
+	width: 100%;
+	height: 400px;
+	margin: 30px 0;
+	.acf-map {
+		width: 50%;
+		height: 400px;
+		// border: #ccc solid 1px;
+		// margin: 20px 0;
+		border-radius: 10px 0 0 10px;
+	}
+
+	/* fixes potential theme css conflict */
+	.acf-map img {
+		max-width: inherit !important;
+	}
+	.moreInfo {
+		display: flex;
+		width: 50%;
+		justify-content: space-between;
+		flex-direction: column;
+		padding: 10px 5%;
+		align-items: flex-start;
+		text-align: left;
+		overflow: scroll;
+		.address,
+		.hours,
+		.email {
+			padding: 10px 0;
+			position: relative;
+		}
+		.email {
+			text-decoration: none;
+		}
+		.address:before {
+			content: "\f041";
+			left: -20%;
+			position: absolute;
+			font-size: 30px;
+			font-family: FontAwesome;
+			width: 30px;
+			text-align: center;
+		}
+		.hours:before {
+			content: "\f017";
+			left: -20%;
+			position: absolute;
+			font-size: 30px;
+			font-family: FontAwesome;
+			width: 30px;
+			text-align: center;
+		}
+		.email:before {
+			content: "\f0e0";
+			left: -20%;
+			position: absolute;
+			font-size: 20px;
+			width: 20px;;
+			font-family: FontAwesome;
+			text-align: center;
+		}
+	}
+}

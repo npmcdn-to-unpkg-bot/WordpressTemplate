@@ -1,6 +1,8 @@
 <!-- variables -->
 <?php $main_color = get_field('main_color', 'options'); ?>
 <?php $accent_color = get_field('accent_color', 'options'); ?>
+<?php $text_color = get_field('text_color', 'options'); ?>
+<?php $background_color = get_field('background_color', 'options'); ?>
 
 <?php get_header();  ?>
     <?php if (has_post_thumbnail()) {?>
@@ -15,25 +17,27 @@
 <div class="main">
 	<div class="container">
 
-		<div style="color:<?php echo $main_color ?>;" class="content">
+		<div style="color:<?php echo $text_color ?>;" class="content">
 			<?php // Start the loop ?>
 			<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+				<div class="pageContent">
+					<!-- <h2><?php the_title(); ?></h2> -->
+					<?php the_content(); ?>
+				</div>
 
-				<h2><?php the_title(); ?></h2>
-				<?php the_content(); ?>
 
-
-				<div class="gallery">
 					<?php $frontpageposts = new WP_Query( array(
 						'posts_per_page' => 3,
 						'post_type' => 'post',
-						'tag' => 'special',
+						'category_name' => 'special',
 						'order' => 'DSC'
 						) 
 					); ?>
 					<?php if ( $frontpageposts->have_posts() ) : ?>
+						<h2 style="color:<?php echo $main_color ?>;" class="sectionTitle"><?php the_field('special_title') ?></h2>
+							<div class="gallery">
 						<?php while ( $frontpageposts->have_posts() ) : $frontpageposts->the_post(); ?>
-								<div class="imageItem">
+								<div class="imageItem specialItem">
 									<a href="<?php the_permalink(); ?>">
 										<div class="frontpageimgcontainer" style="background-image:url('<?php the_post_thumbnail_url('full'); ?>')">
 											
@@ -47,20 +51,21 @@
 					<?php wp_reset_postdata(); ?>
 
 					<?php else:  ?>
-						<p>There are no featured posts at the moment. Please stay tuned for updates.</p>
+						<!-- <p>There are no special items at the moment. Please stay tuned for updates.</p> -->
 					<?php endif; ?>
 				</div>
 
 
-				<div class="gallery">
 					<?php $frontpageposts = new WP_Query( array(
 						'posts_per_page' => 6,
 						'post_type' => 'post',
-						'tag' => 'feature',
+						'category_name' => 'feature',
 						'order' => 'DSC'
 						) 
 					); ?>
 					<?php if ( $frontpageposts->have_posts() ) : ?>
+						<h2 style="color:<?php echo $main_color ?>;" class="sectionTitle"><?php the_field('feature_title') ?></h2>
+							<div class="gallery specialsGallry">
 						<?php while ( $frontpageposts->have_posts() ) : $frontpageposts->the_post(); ?>
 								<div class="imageItem">
 									<a href="<?php the_permalink(); ?>">
@@ -73,13 +78,13 @@
 								</div>
 
 						<?php endwhile; ?>
+						<a style="color:<?php echo $accent_color ?>;" class="viewMore" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ) ?>">View All</a>
 					<?php wp_reset_postdata(); ?>
 
 					<?php else:  ?>
-						<p>There are no featured posts at the moment. Please stay tuned for updates.</p>
+						<!-- <p>There are no featured items at the moment. Please stay tuned for updates.</p> -->
 					<?php endif; ?>
 				</div>
-				<a style="color:<?php echo $accent_color ?>;" class="viewMore" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ) ?>">View More</a>
 
 			<?php endwhile; // end the loop?>
 

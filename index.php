@@ -6,7 +6,12 @@
 	<div class="container">
 
 		<div class="content">
-			<div class="gallery">
+			<div class="button-group filter-button-group">
+				<button data-filter="*">All</button>
+				<button data-filter=".category-special">Special</button>
+				<button data-filter=".category-feature">Feature</button>
+			</div>
+			<div class="gallery grid">
 				<?php get_template_part( 'loop', 'index' );	?>
 			</div>
 		</div> <!--/.content -->

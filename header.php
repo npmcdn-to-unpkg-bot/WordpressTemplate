@@ -13,13 +13,14 @@
 <!-- variables -->
 <?php $main_color = get_field('main_color', 'options'); ?>
 <?php $accent_color = get_field('accent_color', 'options'); ?>
-<?php $body_color = get_field('body_color', 'options'); ?>
+<?php $text_color = get_field('text_color', 'options'); ?>
+<?php $background_color = get_field('background_color', 'options'); ?>
 
-<body style="background-color:<?php echo $body_color ?>" <?php body_class(); ?>>
+<body style="background-color:<?php echo $background_color ?>" <?php body_class(); ?>>
 
 <header>
 	<div style="color:<?php echo $main_color ?>;" class="navcontainer container">
-		<h1>
+		<h1 style="color:<?php echo $accent_color ?>;" class="logo">
 			<?php the_custom_logo(); ?>
 		</h1>
 

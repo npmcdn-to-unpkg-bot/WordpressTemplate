@@ -27,7 +27,7 @@ function new_map( $el ) {
 	};
 	
 	
-	// create map	        	
+	// create map						
 	var map = new google.maps.Map( $el[0], args);
 	
 	
@@ -46,10 +46,56 @@ function new_map( $el ) {
 	// center map
 	center_map( map );
 	
-	
+	// add_style();
+	add_style(map);
+
 	// return
 	return map;
 	
+}
+
+// function to add user selected styles
+function add_style(map) {
+	var mainColor = $('.navcontainer').css("color");
+	var accentColor = $('.logo').css("color");
+	console.log('main color is ', mainColor, 'and accent is ', accentColor)
+
+	function rgb2hex(rgb){
+	 rgb = rgb.match(/^rgba?[\s+]?\([\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?/i);
+	 return (rgb && rgb.length === 4) ? "#" +
+	  ("0" + parseInt(rgb[1],10).toString(16)).slice(-2) +
+	  ("0" + parseInt(rgb[2],10).toString(16)).slice(-2) +
+	  ("0" + parseInt(rgb[3],10).toString(16)).slice(-2) : '';
+	}
+
+	mainColor = rgb2hex(mainColor);
+	console.log('new main color is', mainColor);
+	accentColor = rgb2hex(accentColor);
+
+	var styles = [
+		{
+			"featureType": "road",
+			"stylers": [
+				{ "hue": accentColor}
+			]
+		},{
+			"featureType": "poi",
+			"stylers": [
+				{ "hue":accentColor }
+			]
+		},{
+		},
+		{
+			"featureType": "landscape",
+			"stylers": [
+				{ "hue": accentColor }
+			]
+		},{
+		}
+	]
+	console.log(styles);
+
+	map.setOptions({styles: styles});
 }
 
 /*
@@ -65,6 +111,10 @@ function new_map( $el ) {
 *  @param	map (Google Map object)
 *  @return	n/a
 */
+
+// function add_style($el) {
+	
+// }
 
 function add_marker( $marker, map ) {
 

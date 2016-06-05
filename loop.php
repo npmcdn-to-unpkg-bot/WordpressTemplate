@@ -1,5 +1,10 @@
 <?php // If there are no posts to display, such as an empty archive page ?>
 
+<!-- variables -->
+<?php $main_color = get_field('main_color', 'options'); ?>
+<?php $accent_color = get_field('accent_color', 'options'); ?>
+<?php $text_color = get_field('text_color', 'options'); ?>
+
 <?php if ( ! have_posts() ) : ?>
 
 	<article id="post-0" class="post error404 not-found">
@@ -17,13 +22,13 @@
 <?php while ( have_posts() ) : the_post(); ?>
 
 
-			<div class="imageItem">
+			<div <?php post_class("imageItem grid-item"); ?>>
 				<a href="<?php the_permalink(); ?>">
 					<div class="frontpageimgcontainer" style="background-image:url('<?php the_post_thumbnail_url('full'); ?>')">
 						<!--  -->
 					</div>
 				</a>
-				<a href="<?php the_permalink(); ?>">
+				<a style="color:<?php echo $accent_color ?>" href="<?php the_permalink(); ?>">
 					<h5><?php echo $post->post_title ?></h5>
 				</a>
 			</div>
