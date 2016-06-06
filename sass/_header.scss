@@ -1,5 +1,5 @@
 header {
-	.container {
+	.navcontainer, .container {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -7,5 +7,15 @@ header {
 		h1 {
 			font-size: 0px;
 		}
+	}
+	.navcontainer {
+		width: 75vw;
+		// -webkit-justify-content: flex-start;
+		// -ms-flex-pack: start;
+		// justify-content: flex-start;
+		// -webkit-align-items: center;
+		// -ms-flex-align: center;
+		// align-items: center;
+		margin: 0 auto
 	}
 }

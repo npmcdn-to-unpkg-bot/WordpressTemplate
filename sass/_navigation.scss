@@ -5,6 +5,8 @@
 ul.menu {
 	margin: 0;
 	padding: 0;
+	height: inherit;
+	transition: height 0.3s ease;
 	li {
 		display: inline;
 		margin-right: 10px;

@@ -15,11 +15,12 @@
 <?php $accent_color = get_field('accent_color', 'options'); ?>
 <?php $text_color = get_field('text_color', 'options'); ?>
 <?php $background_color = get_field('background_color', 'options'); ?>
+<?php $post_card_background = get_field('post_card_background', 'options'); ?>
 
 <body style="background-color:<?php echo $background_color ?>" <?php body_class(); ?>>
 
 <header>
-	<div style="color:<?php echo $main_color ?>;" class="navcontainer container">
+	<div style="color:<?php echo $main_color ?>;" class="navcontainer">
 		<h1 style="color:<?php echo $accent_color ?>;" class="logo">
 			<?php the_custom_logo(); ?>
 		</h1>
@@ -28,6 +29,9 @@
 			'container' => false,
 			'theme_location' => 'primary'
 		)); ?>
+		<div class="hamburger">
+			<i class="fa fa-bars" aria-hidden="true"></i>
+		</div>
 	</div> <!-- /.container -->
 
 </header><!--/.header-->

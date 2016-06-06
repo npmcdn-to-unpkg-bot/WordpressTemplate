@@ -2,4 +2,33 @@ footer {
 	// clear: both;
 	display: flex;
 	padding: 20px 0;
+	width: 75vw;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	margin: 60px auto;
+	.container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 20px 0;
+		.custom-logo-link {
+			width: 60px;
+			img {
+				width: 100%;
+				height: 100%;
+			}
+		}
+		.socialIcons {
+			font-size: 2rem;
+			padding: 10px;
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			a {
+				padding: 0 10px;
+			}
+		}
+	}
 }

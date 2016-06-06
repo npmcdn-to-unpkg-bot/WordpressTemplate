@@ -11,6 +11,7 @@ get_header();  ?>
 <?php $accent_color = get_field('accent_color', 'options'); ?>
 <?php $text_color = get_field('text_color', 'options'); ?>
 <?php $background_color = get_field('background_color', 'options'); ?>
+<?php $post_card_background = get_field('post_card_background', 'options'); ?>
 
 <div class="main">
 	<div class="container">
@@ -40,6 +41,11 @@ get_header();  ?>
 					<div class="hours"><?php the_field('hours') ?></div>
 				</div>
 			</div>
+			<?php if (get_field('show_contact_form') == true): ?>
+				<div class="contactForm">
+					
+				</div>
+			<?php endif; ?>
 
 		<?php endwhile; // end the loop?>
 		</div>

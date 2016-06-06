@@ -6,6 +6,13 @@
 
 get_header();  ?>
 
+<!-- variables -->
+<?php $main_color = get_field('main_color', 'options'); ?>
+<?php $accent_color = get_field('accent_color', 'options'); ?>
+<?php $text_color = get_field('text_color', 'options'); ?>
+<?php $background_color = get_field('background_color', 'options'); ?>
+<?php $footer_background_color = get_field('footer_background_color', 'options'); ?>
+
 <div class="main">
   <div class="container">
     <div class="content">
