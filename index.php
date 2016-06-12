@@ -10,13 +10,8 @@
 
 <div class="main">
 	<div class="container">
-	
 	<?php if (wp_get_attachment_url( get_post_thumbnail_id( get_option( 'page_for_posts' ),'full') )) {?>
 	<div class="productHero hero" style="background-image:url('<?php echo wp_get_attachment_url( get_post_thumbnail_id( get_option( 'page_for_posts' ),'full') ); ?>');">
-		<div class="headlineContainer">
-			<h4 style="color:<?php echo $main_color ?>;"><?php the_field('tag_line') ?></h4>
-			<h1 style="color:<?php echo $main_color ?>;"><?php the_field('title') ?></h1>
-		</div>
 	</div>
 	<?php } ?>
 
