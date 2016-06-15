@@ -1,20 +1,10 @@
-# HackerYou Starter Theme
+# Wordpress Custom Theme
 
-This is a simple theme to get you up and running with a new theme in WordPress. 
+This is a custom Wordpress theme built from the HackerYou theme. It's designed for product showcase websites that want to feature products, detail products, or highlight products to visitors. 
 
-## Gulp
+## Pages
 
-The theme includes gulp to process your styles and scripts, if you want to use gulp make sure you run `npm install` and `gulp` so that it will watch your files.
+The theme includes a frontpage that allows for certain products to be featured, a products page that allows the user to filter and sort all products by product category, a single product page for each product, and a contact page with customizable details. 
 
-If you are on windows and your `localhost` setup does not have `localhost:8888` make sure to change the browser sync task.
-
-```js
-gulp.task('bs', function() {
-    browserSync.init({
-        // if running on windows, change this to http://localhost
-        proxy: 'http://localhost:8888'
-    });
-});
-```
-
+This theme is fully customizable for different brands controlling for brand colors and styles.
 
