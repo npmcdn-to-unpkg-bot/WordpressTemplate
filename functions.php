@@ -85,7 +85,7 @@ function hackeryou_scripts() {
 
   wp_enqueue_script(
   	'isotope',
-  	"http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://npmcdn.com/isotope-layout@3.0/dist/isotope.pkgd.min.js",
+  	"http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://unpkg.com/isotope-layout@3.0/dist/isotope.pkgd.min.js",
   	array( 'jquery' ), //dependencies
   	null, //version number
   	true //load in footer
